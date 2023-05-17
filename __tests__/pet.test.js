@@ -21,13 +21,13 @@ describe('constructor', () => {
         const pet = new Pet('Fido');
 
         expect(pet.hunger).toEqual(0);
-    })
+    });
 
     it('has an initial fitness of 10', () => {
         const pet = new Pet('Fido');
 
         expect(pet.fitness).toEqual(10);
-    })
+    });
 });
 
 describe('growUp', () => {
@@ -45,7 +45,7 @@ describe('growUp', () => {
         pet.growUp();
 
         expect(pet.hunger).toEqual(5);
-    })
+    });
 
     it('decreases the fitness property by 3', () => {
         const pet = new Pet('Fido');
@@ -53,7 +53,27 @@ describe('growUp', () => {
         pet.growUp();
 
         expect(pet.fitness).toEqual(7);
-    })
+    });
+});
+
+describe('walk', () => {
+    it('increases pets fitness level by 4', () => {
+        const pet = new Pet('Fido');
+        
+        pet.fitness = 4;
+        pet.walk();
+
+        expect(pet.fitness).toEqual(8);
+    });
+ 
+    it('increases fitness to a maximum of 10', () => {
+        const pet = new Pet('Fido');
+        
+        pet.fitness = 8;
+        pet.walk();
+
+        expect(pet.fitness).toEqual(10);
+    });
 });
 
 
