@@ -135,3 +135,39 @@ describe('checkUp', () => {
 
     });
 });
+
+describe('isAlive', () => {
+    it('returns false if pets fitness is 0 or less', () => {
+        const pet = new Pet('Fido');
+
+        pet.fitness = 0;
+
+        expect(pet.isAlive()).toBe('false');
+    });
+
+    it('returns false if pets hunger is 10 or more', () => {
+        const pet = new Pet('Fido');
+
+        pet.hunger = 14;
+
+        expect(pet.isAlive()).toBe('false');
+    });
+
+    it('returns false if pets age is 30 or more', () => {
+        const pet = new Pet('Fido');
+
+        pet.age = 36;
+
+        expect(pet.isAlive()).toBe('false');
+    });
+
+    it('otherwise returns true', () => {
+        const pet = new Pet('Fido');
+
+        pet.age = 12;
+        pet.hunger = 7;
+        pet.fitness = 4;
+
+        expect(pet.isAlive()).toBe('true');
+    });
+});

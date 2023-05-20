@@ -49,7 +49,24 @@ Pet.prototype.checkUp = function() {
    if (this.hunger >= 5) {
       return 'I am hungry';
    }
+};
 
-   
-}
+Pet.prototype.isAlive = function() {
+
+   if(this.fitness <= 0) {
+      return 'false';
+   }
+
+   if(this.hunger >= 10) {
+      return 'false';
+   }
+
+   if(this.age >= 30) {
+      return 'false';
+   }
+
+   else {
+      return 'true'
+   }
+};
 module.exports = Pet;
