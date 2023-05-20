@@ -142,7 +142,7 @@ describe('isAlive', () => {
 
         pet.fitness = 0;
 
-        expect(pet.isAlive()).toBe('false');
+        expect(pet.isAlive).toBe(false);
     });
 
     it('returns false if pets hunger is 10 or more', () => {
@@ -150,7 +150,7 @@ describe('isAlive', () => {
 
         pet.hunger = 14;
 
-        expect(pet.isAlive()).toBe('false');
+        expect(pet.isAlive).toBe(false);
     });
 
     it('returns false if pets age is 30 or more', () => {
@@ -158,7 +158,7 @@ describe('isAlive', () => {
 
         pet.age = 36;
 
-        expect(pet.isAlive()).toBe('false');
+        expect(pet.isAlive).toBe(false);
     });
 
     it('otherwise returns true', () => {
@@ -168,6 +168,6 @@ describe('isAlive', () => {
         pet.hunger = 7;
         pet.fitness = 4;
 
-        expect(pet.isAlive()).toBe('true');
+        expect(pet.isAlive).toBe(true);
     });
 });

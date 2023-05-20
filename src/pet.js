@@ -8,7 +8,13 @@ function Pet(name) {
    this.age = 0;
    this.hunger = 0;
    this.fitness = 10;
-}
+} 
+
+Pet.prototype = {
+   get isAlive() {
+      return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+   }
+};
 
 Pet.prototype.growUp = function() {
     this.age += 1;
@@ -51,22 +57,5 @@ Pet.prototype.checkUp = function() {
    }
 };
 
-Pet.prototype.isAlive = function() {
 
-   if(this.fitness <= 0) {
-      return 'false';
-   }
-
-   if(this.hunger >= 10) {
-      return 'false';
-   }
-
-   if(this.age >= 30) {
-      return 'false';
-   }
-
-   else {
-      return 'true'
-   }
-};
 module.exports = Pet;
